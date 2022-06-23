@@ -1,13 +1,13 @@
 package com.anahuac.calidad.tareaUnitTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class TestBookShelfMock {
+public class TestBookShelfMock {
 
 	@Test
-	void test() {
+	public void test() {
 		fail("Not yet implemented");
 	}
 
