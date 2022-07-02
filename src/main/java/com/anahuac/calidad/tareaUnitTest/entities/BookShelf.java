@@ -72,5 +72,7 @@ public class BookShelf {
         int percentageInProgress = booksInProgress * 100 / books.size();
 
         return new Progress(percentageCompleted, percentageToRead, percentageInProgress);
+        
+        
     }
 }
