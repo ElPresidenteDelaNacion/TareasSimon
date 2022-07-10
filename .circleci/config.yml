@@ -12,7 +12,7 @@ jobs:
     # Be sure to update the Docker image tag below to openjdk version of your application.
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
-      - image: cimg/openjdk:11.0
+      - image: circleci/openjdk:11-browsers-legacy
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -24,8 +24,29 @@ jobs:
           command: mvn -B -DskipTests clean package
       # Then run your tests!
       - run:
-          name: Test
-          command: mvn test
+          name: Test Mockito
+          command: mvn -Dtest="MockUsuarioDaoTest.java" test
+      - run:
+          name: Test MernCrud
+          command: mvn -Dtest="TestMernCrud.java" test
+      - run:
+          name: Test DBunit
+          command: mvn -Dtest="UsuarioDAOMySQL.java" test
+      #para guardar los test
+          steps:
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex "./target/surefire-reports/.xml" -exec cp {} ~/test-results/junit/ ;
+          when: always
+      - store_test_results:
+          path: ~/test-results
+      - store_artifacts:
+          path: /tmp/screenshots/    
+          
+          
+       
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
