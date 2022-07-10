@@ -29,10 +29,7 @@ jobs:
       - run:
           name: Test MernCrud
           command: mvn -Dtest="TestMernCrud.java" test
-      - run:
-          name: Test DBunit
-          command: mvn -Dtest="UsuarioDAOMySQL.java" test
-      #para guardar los test
+#para guardar los test
           steps:
       - run:
           name: Save test results
@@ -43,7 +40,7 @@ jobs:
       - store_test_results:
           path: ~/test-results
       - store_artifacts:
-          path: /tmp/screenshots/    
+          path: /tmp/screenshots/   
           
           
        
