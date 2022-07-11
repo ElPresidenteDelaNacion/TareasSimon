@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-
+import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 
 public class TestMernCrud {
@@ -48,6 +48,7 @@ public class TestMernCrud {
 	    
 	    String tag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
 	    assertThat("Nice one!",is(tag));
+		takeScreenshoot("A1");  
 	  }
 
 
@@ -71,6 +72,7 @@ public class TestMernCrud {
 		  driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/button")).click();
 		  String tag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
 		    assertThat("Nice one!",is(tag));
+		  takeScreenshoot("A2");
 		  
 	  }
 	  
@@ -87,6 +89,7 @@ public class TestMernCrud {
 		        pause(2500);
 		        
 			    assertThat("delete", is(not(bdelete)));
+		  		takeScreenshoot("A3");
 			    
 		  } 
 	  
@@ -131,6 +134,14 @@ public class TestMernCrud {
 	    } finally {
 	      acceptNextAlert = true;
 	    }
+	  }
+		  public void takeScreenshoot(String name) {
+		  File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		  try {
+			  FileUtils.copyFile(scrFile, new File("/tmp/screenshots", name));} 
+		  catch (Exception e) 
+		  {// TODO: handle exception e.printStackTrace();	
+		  }
 	  }
 	  
 	  private void pause(long mils) {
