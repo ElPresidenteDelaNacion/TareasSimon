@@ -24,11 +24,11 @@ jobs:
           command: mvn -B -DskipTests clean package
       # Then run your tests!
       - run:
-          name: Test Mockito
-          command: mvn -Dtest="MockUsuarioDaoTest.java" test
-      - run:
           name: Test MernCrud
           command: mvn -Dtest="TestMernCrud.java" test
+      - run:
+          name: Test Mockito
+          command: mvn -Dtest="MockUsuarioDaoTest.java" test          
       #para guardar los test
           steps:
       - run:
