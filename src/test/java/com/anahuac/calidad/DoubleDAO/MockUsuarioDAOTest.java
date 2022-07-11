@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
@@ -103,7 +103,7 @@ public void updateEmail()
 	dao.updateEmail(usuatest);
 	String correoDesp = usuarios.get(usuatest.getId()).getEmail();
 	System.out.println("Correo despues: " + correoDesp);
-	assertThat(correoAntes,is((correoDesp)));
+	assertThat(correoAntes,is(not(correoDesp)));
 }
 
 @Test
