@@ -74,59 +74,7 @@ public class TestMernCrud {
 		  
 	  }
 	  
-	  @Test
-	  public void testBuscar() throws Exception {
-		  driver.get("https://mern-crud.herokuapp.com/");
-	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
-	    driver.findElement(By.name("name")).click();
-	    driver.findElement(By.name("name")).clear();
-	    driver.findElement(By.name("name")).sendKeys("Francisco");
-	    driver.findElement(By.name("email")).clear();
-	    driver.findElement(By.name("email")).sendKeys("fsimonbcontact@gmail.com");
-	    driver.findElement(By.name("age")).click();
-	    driver.findElement(By.name("age")).clear();
-	    driver.findElement(By.name("age")).sendKeys("100");
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[1]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Male'])[1]/following::div[2]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
-	    driver.findElement(By.xpath("//i")).click();
-	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
-	    driver.findElement(By.name("name")).click();
-	    driver.findElement(By.name("name")).clear();
-	    driver.findElement(By.name("name")).sendKeys("Elon Musk");
-	    driver.findElement(By.name("email")).click();
-	    driver.findElement(By.name("email")).clear();
-	    driver.findElement(By.name("email")).sendKeys("payuselon@mail.com.us");
-	    driver.findElement(By.name("age")).click();
-	    driver.findElement(By.name("age")).clear();
-	    driver.findElement(By.name("age")).sendKeys("10");
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[2]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Male'])[1]/following::div[2]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
-	    driver.findElement(By.xpath("//i")).click();
-	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Elon Musk'])[2]/following::button[1]")).click();
-	    
-	    String expName = "Francisco Simon";
-	    String expMail = "fsimonbcontact@gmail.com";
-	    String expAge = "100";
-	    String expGend= "m";
-	    
-	    String actName = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[1]")).getText();
-	    String actMail = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[2]")).getText();
-	    String actAge = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[3]")).getText();
-	    String actGend = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[4]")).getText();
-	    
-	    assertEquals(expName,actName);
-	    assertEquals(expMail,actMail);
-	    assertEquals(expAge,actAge);
-	    assertEquals(expGend,actGend);
-	    
-	    
-	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Francisco Simon'])[2]/following::button[1]")).click();
-	  
-	  }
+	
 	  
 
 	  @Test
