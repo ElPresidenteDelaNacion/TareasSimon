@@ -28,7 +28,7 @@ jobs:
           command: mvn -Dtest="TestMernCrud.java" test
       - run:
           name: Test Mockito
-          command: mvn -Dtest="MockUsuarioDaoTest.java" test          
+          command: mvn -Dtest="MockUsuarioDAOTest.java" test          
       #para guardar los test
           steps:
       - run:
