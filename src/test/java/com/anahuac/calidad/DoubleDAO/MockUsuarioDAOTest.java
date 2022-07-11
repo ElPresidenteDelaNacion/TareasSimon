@@ -29,7 +29,7 @@ public class MockUsuarioDAOTest {
 public void setUp() throws Exception {
     dao = Mockito.mock(MockUsuarioDAO.class);
     usuarios = new HashMap<String, Usuario>();
-    usuatest = new Usuario("asdasd@gmail", "01","frank", "21");
+    usuatest = new Usuario("Frank", "01","21", "asdasd@gmail");
 }
 
 @After
