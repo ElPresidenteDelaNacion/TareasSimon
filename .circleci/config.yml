@@ -27,8 +27,9 @@ jobs:
           name: Test MernCrud Functional
           command: mvn -Dtest="TestMernCrud.java" test
       - run:
-          name: Test Mockito
-          command: mvn -Dtest="MockUsuarioDAOTest.java" test          
+          name: Test Mockito Mock
+          command: mvn -Dtest="MockUsuarioDAOTest.java" test    
+          
       #para guardar los test
           steps:
       - run:
