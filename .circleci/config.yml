@@ -44,8 +44,6 @@ jobs:
       - store_artifacts:
           path: /tmp/screenshots/ 
           
-version: 2
-jobs:
 build:
   working_directory: /tmp
   steps:
