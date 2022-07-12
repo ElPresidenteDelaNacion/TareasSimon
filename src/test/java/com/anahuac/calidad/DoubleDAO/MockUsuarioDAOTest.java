@@ -103,7 +103,7 @@ public void updateEmail()
 	dao.updateEmail(usuatest);
 	String correoDesp = usuarios.get(usuatest.getId()).getEmail();
 	System.out.println("Correo despues: " + correoDesp);
-	assertThat(correoAntes,is(not(correoDesp)));
+	assertThat(correoAntes,is((correoDesp)));
 }
 
 @Test
